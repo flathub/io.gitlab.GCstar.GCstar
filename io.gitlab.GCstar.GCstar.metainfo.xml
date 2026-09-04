@@ -27,9 +27,6 @@
     </description>
 
     <releases>
-        <release version="1.8.1" date="2026-09-04">
-            <description></description>
-        </release>
         <release version="1.8.1" date="2026-06-22">
             <description>
                 <p>Release to consolidate multiple modifications to GCstar and its plugins. No
