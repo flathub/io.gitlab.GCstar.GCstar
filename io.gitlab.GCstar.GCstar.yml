@@ -1,6 +1,6 @@
 id: io.gitlab.GCstar.GCstar
 runtime: org.gnome.Platform
-runtime-version: "50"
+runtime-version: '50'
 sdk: org.gnome.Sdk
 command: gcstar
 
@@ -16,9 +16,9 @@ modules:
   - name: perl
     no-autogen: true
     config-opts:
-      - "-des"
-      - "-Duseshrplib"
-      - "-Dusethreads"
+      - -des
+      - -Duseshrplib
+      - -Dusethreads
     build-options:
       # There would otherwise be compilation errors
       cflags: >-
@@ -27,42 +27,42 @@ modules:
         -Wno-error=implicit-int
         -Wno-error=incompatible-pointer-types
         -Wno-error=int-conversion
-      ldflags: "-fpic"
+      ldflags: -fpic
     sources:
       - type: archive
         url: https://www.cpan.org/src/5.0/perl-5.40.4.tar.gz
         sha256: 3258564b644dc912f7367c4f49d6df77a855cdef9305c50801e03d09d39381af
       - type: shell
         commands:
-          - "ln -s configure{.gnu,}"
+          - ln -s configure{.gnu,}
     post-install:
-      - "chmod -R u+w /app/lib/perl5"
+      - chmod -R u+w /app/lib/perl5
     cleanup:
-      - "/bin/corelist"
-      - "/bin/cpan"
-      - "/bin/enc2xs"
-      - "/bin/encguess"
-      - "/bin/h2ph"
-      - "/bin/h2xs"
-      - "/bin/instmodsh"
-      - "/bin/json_pp"
-      - "/bin/libnetcfg"
-      - "/bin/perlbug"
-      - "/bin/perldoc"
-      - "/bin/perlivp"
-      - "/bin/perlthanks"
-      - "/bin/piconv"
-      - "/bin/pl2pm"
-      - "/bin/pod*"
-      - "/bin/prove"
-      - "/bin/ptar*"
-      - "/bin/shasum"
-      - "/bin/splain"
-      - "/bin/xsubpp"
-      - "/bin/zipdetails"
-      - "/include"
-      - "/man"
-      - "*.pod"
+      - /bin/corelist
+      - /bin/cpan
+      - /bin/enc2xs
+      - /bin/encguess
+      - /bin/h2ph
+      - /bin/h2xs
+      - /bin/instmodsh
+      - /bin/json_pp
+      - /bin/libnetcfg
+      - /bin/perlbug
+      - /bin/perldoc
+      - /bin/perlivp
+      - /bin/perlthanks
+      - /bin/piconv
+      - /bin/pl2pm
+      - /bin/pod*
+      - /bin/prove
+      - /bin/ptar*
+      - /bin/shasum
+      - /bin/splain
+      - /bin/xsubpp
+      - /bin/zipdetails
+      - /include
+      - /man
+      - '*.pod'
 
   - name: libgd
     buildsystem: autotools
@@ -85,7 +85,7 @@ modules:
   - name: perl-libs
     buildsystem: simple
     build-commands:
-      - "perl-libs/install.sh"
+      - perl-libs/install.sh
     build-options:
       cflags: >-
         -std=gnu17
@@ -94,12 +94,12 @@ modules:
         -Wno-error=incompatible-pointer-types
         -Wno-error=int-conversion
     post-install:
-      - "chmod -Rf u+w /app/lib/perl5/site_perl"
+      - chmod -Rf u+w /app/lib/perl5/site_perl
     sources:
       - generated-sources.json
     cleanup:
-      - "/bin"
-      - "/man"
+      - /bin
+      - /man
 
   - name: gcstar
     buildsystem: simple
@@ -111,7 +111,8 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
-        commit: 08c222270875700daa1ee2d11af981f961fa74f6
+        commit: 428f2f9d13c5937d81e27b6b5a91eed6721f3edf
+        tag: v1.8.1
       - type: file
         path: io.gitlab.GCstar.GCstar.desktop
       - type: file
