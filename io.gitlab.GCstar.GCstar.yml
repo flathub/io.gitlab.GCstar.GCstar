@@ -108,9 +108,9 @@ modules:
       - type: git
         url: https://gitlab.com/GCstar/GCstar.git
         dest: main
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
+        # x-checker-data:
+        #   type: git
+        #   tag-pattern: ^v([\d.]+)$
         commit: 08c222270875700daa1ee2d11af981f961fa74f6
       - type: file
         path: io.gitlab.GCstar.GCstar.desktop
